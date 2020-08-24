@@ -1,0 +1,13 @@
+<ng-container *ngFor="let x of data; let i = index">
+  <div class="ctr">
+    <!--<span #names class="item">{{x.name}}</span>-->
+    <input #names class="item" [(ngModel)]="x.name" (ngModelChange)="onFieldChange(i, $event)">
+    <span #types class="item">{{x.type}}</span>
+    <span class="button" (click)="showData(i)">Show data</span>
+  </div>
+  
+</ng-container>
+
+<h2>Selected values: </h2>
+Selected name: {{selectedName}} <br>
+Selected type: {{selectedType}}
